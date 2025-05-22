@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flashcard-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flashcard-backend
+  template:
+    metadata:
+      labels:
+        app: flashcard-backend
+    spec:
+      containers:
+      - name: flashcard-backend
+        image: vfa595/flashcard-backend:latest  
+        ports:
+        - containerPort: 8080
+
