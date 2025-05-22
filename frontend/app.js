@@ -3,7 +3,7 @@ let currentFlashcardIndex = 0;
 let correctAnswers = 0;
 let categories = {};  
 
-const API_BASE_URL = "https://flashcard-backend-159351315492.us-central1.run.app"; 
+const API_BASE_URL = "/api";
 
 async function fetchFlashcards(category) {
     try {
@@ -18,7 +18,9 @@ async function fetchFlashcards(category) {
     }
 }
 
+window.startCategory = startCategory;
 async function startCategory(category) {
+    console.log("Button clicked, category:", category); 
     currentCategory = category;
     currentFlashcardIndex = 0;
     correctAnswers = 0;
